@@ -3,11 +3,11 @@ import { Button } from '@material-ui/core';
 function App() {
   return (
     <div className="App">
-      <h1 style={{
+    <h1 style={{
     fontSize:50, 
     color:'red', background:'black'}}>Sholay</h1>
 
-<Button variant="contained">Hello World... </Button>
+    <Button variant="contained">Hello World... </Button>
     </div>
 
   );
