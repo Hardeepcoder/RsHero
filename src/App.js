@@ -1,20 +1,32 @@
 import './App.css';
-import {Container, Button, Alert} from 'react-bootstrap'
-import { useState } from 'react';
+import {Button, input, Container} from 'react-bootstrap';
+import {useState} from 'react';
 function App() {
- const [show, setShow] = useState();
+  const [value, setValue] = useState();
 
-  return (
+
+  function myfun(){
+    var p = new RegExp(/^[0-9\b]+$/);
+    if(value==""){
+      alert('please fill the value');
+    }
+    else if(!p.test(value)){
+      alert('please enter only numbers');
+    }
+    else if(value.length!=10){
+      alert('please enter 10 digit contact number');
+    }
+    else{
+      alert(value);
+    }
+  }
+return (
  <>
-    <Container>
-      <h1>Bootstrap in reactjs</h1>
-      <Alert variant="success" show={show}>
-        <Alert.Heading>This is heading</Alert.Heading>
-        <p>this is content</p>
-      </Alert>
-    <Button variant="danger"
-    onClick={() => setShow(false)}>Close X</Button>
-    </Container>
+ <Container>
+  
+   <input onChange={e => setValue(e.target.value)}/>
+   <Button onClick={myfun}>Click</Button>
+   </Container>
  </>
 
   );
